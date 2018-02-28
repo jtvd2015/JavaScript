@@ -11,6 +11,9 @@
 		frames[idx] = frameScore;
 		totalScore += frameScore;
 	}
+	for(var val of frames) {
+    	totalScore += val;
+	}
 	var gameResult = frames.join(",");
 	console.log(gameResult, "Total is", totalScore);
 	}
