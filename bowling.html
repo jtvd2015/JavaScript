@@ -1,0 +1,21 @@
+<!doctype html> 
+<html lang="en">
+<head>
+<title>Bowling Game</title>
+<script lang="javascript">
+	function PlayBowling() {
+	var frames = [];
+	for(var idx = 0; idx < 10; idx++){
+		var frameScore = Math.floor(Math.random() * 11);
+		frames[idx] = frameScore;
+	}
+	var gameResult = frames.join(",");
+	console.log(gameResult);
+	}
+
+</script>
+</head>
+<body OnLoad="PlayBowling()">
+<h1></h1>
+</body>
+</html>
