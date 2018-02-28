@@ -1,0 +1,63 @@
+<!doctype html> 
+<html lang="en">
+<head>
+<title></title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script lang="javascript">
+
+	var arrObjects = [];
+	var tbodyCtrl;
+
+	function Main() {    //this function is started automatically
+		tbodyCtrl = document.getElementById("tbody");
+	}
+
+	function Clicked() {
+		//var nameCtrl = document.getElementById("name");  
+		//var name = nameCtrl.value;  //this statement and the statement above can be done in 1 statement, as shown, below, in var name = document.getElementById("name").value; value is what the user enters
+		var name = document.getElementById("name").value;
+		var phone = document.getElementById("phone").value;
+		
+
+		AddObject(name, phone);
+
+		//var tr = "<tr><td>"+name+"</td><td>"+phone+"</td></tr>";
+
+		//tbodyCtrl.innerHTML += tr; //innerHTML takes what is inside the <tr><td></tr></td> tags and adds the information entered in the name and phone input boxes
+	}
+	function AddObject(name, phone) {
+		var obj = {
+			namekey: name, 
+			phonekey: phone
+		};
+		arrObjects.push(obj);
+		DisplayObjects();  //this will call the function DisplayObjects() when the data is added in the input boxes
+	}
+	function DisplayObjects() {
+		tbodyCtrl.innerHTML = "";
+		for(var o of arrObjects){
+					var tr = "<tr><td>"+o.namekey+"</td><td>"+o.phonekey+"</td></tr>";
+					tbodyCtrl.innerHTML += tr;
+		}
+	}
+</script>
+</head>
+<body OnLoad="Main()">
+	<div>
+		<input id="name" type="text">
+		<input id="phone" type="text">
+		<button OnClick="Clicked()">Add</button>
+	</div>
+	<br>
+	<table class="table table-sm">
+		<thead>
+			<tr>
+				<th>Name</th><th>Phone</th>
+			</tr>
+		</thead>
+		<tbody id="tbody">
+			<tr><td></td><td></td></tr>
+		</tbody>
+	</table>
+</body>
+</html>
