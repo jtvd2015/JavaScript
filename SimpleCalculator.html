@@ -1,0 +1,70 @@
+<!doctype html> 
+<html lang="en">
+<head>
+<title></title>
+<script lang="javascript">
+	function Main() {  //this function is started automatically
+	}
+	function OnClick() {
+		var inputCtrl = document.getElementById("inp");
+		var inputText = inputCtrl.value; 
+		var inp = parseInt(inputText);  //the user will enter a number
+		inputText = nbr * nbr;  //this will take the number provided after the user enters the number, and multiply it by itself
+		var labelCtrl = document.getElementById("lbl");   //this will get whatever the user entered into the input box
+		labelCtrl.textContent = inputText;
+
+	}
+	function Add() {
+		var op1Ctrl = document.getElementById("op1");
+		var op1 = parseInt(op1Ctrl.value);
+		var op2Ctrl = document.getElementById("op2");
+		var op2 = parseInt(op2Ctrl.value);
+
+		var labelCtrl = document.getElementById("ans");
+		labelCtrl.textContent = op1 + op2;
+	}
+	function Sub() {
+		var op1Ctrl = document.getElementById("op1");
+		var op1 = parseInt(op1Ctrl.value);
+		var op2Ctrl = document.getElementById("op2");
+		var op2 = parseInt(op2Ctrl.value);
+
+		var labelCtrl = document.getElementById("ans");
+		labelCtrl.textContent = op1 - op2;
+	}
+	function Mult() {
+		var op1Ctrl = document.getElementById("op1");
+		var op1 = parseInt(op1Ctrl.value);
+		var op2Ctrl = document.getElementById("op2");
+		var op2 = parseInt(op2Ctrl.value);
+
+		var labelCtrl = document.getElementById("ans");
+		labelCtrl.textContent = op1 * op2;
+	}
+	function Div() {
+		var op1Ctrl = document.getElementById("op1");
+		var op1 = parseInt(op1Ctrl.value);
+		var op2Ctrl = document.getElementById("op2");
+		var op2 = parseInt(op2Ctrl.value);
+
+		var labelCtrl = document.getElementById("ans");
+		labelCtrl.textContent = op1 / op2;
+	}
+</script>
+</head>
+<body OnLoad="Main()">
+	<input id="op1" type="text">
+	&nbsp;
+	<input id="op2" type="text">	
+	<label id="ans"></label>
+	<br>
+	<br>
+	<button id="add" OnClick="Add()">Add</button>
+	&nbsp;
+	<button id="sub" OnClick="Sub()">Subtract</button>
+	&nbsp;
+	<button id="mul" OnClick="Mult()">Multiply</button>	
+	&nbsp;
+	<button id="div" OnClick="Div()">Divide</button>	
+</body>
+</html>
