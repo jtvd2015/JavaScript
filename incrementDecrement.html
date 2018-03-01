@@ -1,0 +1,34 @@
+<!doctype html> 
+<html lang="en">
+<head>
+<title>Increment or Decrement</title>
+<script lang="javascript">
+	var theNumber = 0;
+	var inputCtrl;   //this controls the user entering/pressing the buttons
+
+	function Main() {  //this function is started automatically
+		inputCtrl = document.getElementById("nbr");
+		Display();
+		
+	}
+		function Increment() {
+			theNumber++;  	
+			Display();			
+		}
+	
+		function Decrement() {
+			theNumber--; 
+			Display();				
+		}
+		
+		function Display() {
+			inputCtrl.value = theNumber;
+		}
+</script>
+</head>
+<body OnLoad="Main()">
+<button id="dec" OnClick="Decrement()">-</button>
+<input id="nbr" readonly>
+<button id="inc" OnClick="Increment()">+</button>
+</body>
+</html>

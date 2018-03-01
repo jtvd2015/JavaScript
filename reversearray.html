@@ -1,0 +1,48 @@
+<!doctype html> 
+<html lang="en">
+<head>
+<title></title>
+<script lang="javascript">
+
+	var arr = [];
+	var inpCtrl;
+	var lblCtrl;
+
+	function Main() {  //this function is started automatically
+		inpCtrl = document.getElementById("inp");		
+		lblCtrl = document.getElementById("lbl");
+	}
+	function Add() {
+		var nbr = inpCtrl.value;
+		arr.push(nbr);
+		lblCtrl.textContent = arr.join(",");
+		inpCtrl.value = "";
+	}
+	function Reverse() {
+		var nbr = inpCtrl.value;
+		lblCtrl.textContent = arr.reverse(",");
+		inpCtrl.value = "";
+		arr = [];
+	}
+
+	
+</script>
+</head>
+<body OnLoad="Main()">
+	<input id="inp" type="text">
+	<button id="add" OnClick="Add()">Add</button>	
+	<button id="rev" OnClick="Reverse()">Reverse</button>
+	<label id="lbl"></label>
+
+<p>Reverse the Array</p>
+
+<p>HTML page that contains an input control, two buttons: one says Add, the other one says Display Reversed, and a label.</p>
+
+<p>When the Add button is clicked, the number is entered into an arry and the entire array is displayed as numbers separated by a comma in the label.</p>
+
+<p>When the DisplayAll button is clicked, the displayed numbers reverse order and have commas between them.</p>
+
+<p>Clear the array.</p>
+
+</body>
+</html>

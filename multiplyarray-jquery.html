@@ -1,0 +1,49 @@
+<!doctype html> 
+<html lang="en">
+<head>
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script lang="javascript">
+	
+	var arr = [];
+
+	$().ready(function() {
+
+		$("#add").click(function() {
+			var nbr = $("#inp").val();
+			arr.push(nbr);
+			$("#lbl").text(arr.join(","));	
+			$("#inp").val("");		
+		});
+
+		$("#multiplyAll").click(function() {
+			var total = 1;
+			for (var item of arr) 
+				total *= item;
+			$("#lbl").text(total);
+			arr = [];
+		});
+
+	});
+	
+</script>
+</head>
+<body>
+	<input id="inp" type="text">
+	<button id="add">Add</button>	
+	<button id="multiplyAll">Multiply All</button>
+	<label id="lbl"></label>
+
+
+<p>Instructions:</p>
+
+<p>Need an input control box, two buttons - 1 button says add, the other button says multiply all, and a label.</p>
+
+<p>A number is entered into the input box by pressing the Add button and it shows next to the multiply all button.  Once all the numbers have been entered, click on the multiply all button and it displays the numbers that previously showed as a multiplied total.</p>
+
+<p>Clear the array</p>
+
+<p>The multiply all button is clicked to multiply all the numbers displayed and then the multiplied answer is displayed.</p>
+
+</body>
+</html>

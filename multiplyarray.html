@@ -1,0 +1,49 @@
+<!doctype html> 
+<html lang="en">
+<head>
+<title></title>
+<script lang="javascript">
+
+	var arr = [];
+	var inpCtrl;
+	var lblCtrl;
+
+	function Main() {  //this function is started automatically
+		inpCtrl = document.getElementById("inp");		
+		lblCtrl = document.getElementById("lbl");
+	}
+	function Add() {
+		var nbr = inpCtrl.value;
+		arr.push(nbr);
+		lblCtrl.textContent = arr.join(" ");
+		inpCtrl.value = "";
+	}
+	function MAll() {
+		var total = 1;
+		for(var nbr of arr)
+			total *= nbr;
+		lblCtrl.textContent = total;
+		arr = [];
+	}
+
+	
+</script>
+</head>
+<body OnLoad="Main()">
+	<input id="inp" type="text">
+	<button OnClick="Add()">Add</button>	
+	<button OnClick="MAll()">Multiply</button>
+	<label id="lbl"></label>
+
+<p>Instructions:</p>
+
+<p>Need an input control box, two buttons - 1 button says add, the other button says multiply all, and a label.</p>
+
+<p>A number is entered into the input box by pressing the Add button and it shows next to the multiply all button.  Once all the numbers have been entered, click on the multiply all button and it displays the numbers that previously showed as a multiplied total.</p>
+
+<p>Clear the array</p>
+
+<p>The multiply all button is clicked to multiply all the numbers displayed and then the multiplied answer is displayed.</p>
+
+</body>
+</html>

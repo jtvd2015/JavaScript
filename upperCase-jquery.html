@@ -1,0 +1,33 @@
+<!doctype html> 
+<html lang="en">
+<head>
+<title>Convert to Upper Case</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">	
+</script>
+<script lang="javascript">
+	$().ready(function() {
+
+		$("#upper").click(function() {
+			var theText = $("#inp").val();
+			var theTextInUpperCase = theText.toUpperCase();
+			$("#lbl").text(theTextInUpperCase);
+		});
+
+		$("#lower").click(function() {
+			var theText = $("#inp").val();
+			var theTextInLowerCase = theText.toLowerCase();
+			$("#lbl").text(theTextInLowerCase);
+		});
+
+	});	
+</script>
+</head>
+<body>
+<input id="inp" type="text">
+<button id="upper" class="btn btn-success">Super Size Me!</button>
+<button id="lower" class="btn btn-success">Shrink Me!</button>	
+<label id="lbl"></label>
+
+</body>
+</html>

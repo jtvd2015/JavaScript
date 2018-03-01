@@ -1,0 +1,47 @@
+<!doctype html> 
+<html lang="en">
+<head>
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script lang="javascript">
+	
+	var arr = [];
+
+	$().ready(function() {
+
+		$("#add").click(function() {
+			var nbr = $("#inp").val();
+			arr.push(nbr);
+			$("#lbl").text(arr.join(","));	
+			$("#inp").val("");		
+		});
+
+
+	$("#rev").click(function() {
+		arr.reverse();
+		$("#lbl").text(arr.join(","));
+		arr = [];
+	});
+
+});
+	
+</script>
+</head>
+<body>
+	<input id="inp" type="text">
+	<button id="add">Add</button>	
+	<button id="rev">Reverse</button>
+	<label id="lbl"></label>
+
+<p>Reverse the Array</p>
+
+<p>HTML page that contains an input control, two buttons: one says Add, the other one says Display Reversed, and a label.</p>
+
+<p>When the Add button is clicked, the number is entered into an arry and the entire array is displayed as numbers separated by a comma in the label.</p>
+
+<p>When the DisplayAll button is clicked, the displayed numbers reverse order and have commas between them.</p>
+
+<p>Clear the array.</p>
+
+</body>
+</html>

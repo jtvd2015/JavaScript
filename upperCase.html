@@ -1,0 +1,48 @@
+<!doctype html> 
+<html lang="en">
+<head>
+<title>Convert to Upper Case</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script lang="javascript">
+	var inputCtrl;
+	var labelCtrl;
+	var labelCtrl1;
+
+function Main() {  //this function is started automatically
+	inputCtrl = document.getElementById("inp");
+	labelCtrl = document.getElementById("lbl");
+	labelCtrl1 = document.getElementById("lbl1")
+
+}
+
+	function ClickedU() {
+		var theText = inputCtrl.value;
+		var theUpperCaseText = theText.toUpperCase();
+		labelCtrl.textContent = theUpperCaseText;
+	}
+
+	function ClickedL() {
+		var theText = inputCtrl.value;
+		var theLowerCaseText = theText.toLowerCase();
+		labelCtrl1.textContent = theLowerCaseText;
+	}
+</script>
+</head>
+<body OnLoad="Main()">
+<input id="inp" type="text">
+<br>
+<br>
+<button id="btn" class="btn btn-success" OnClick="ClickedU()">Super Size Me!</button>	
+<label id="lbl"></label>
+
+<hr>
+
+<input id="inp" type="text">
+<br>
+<br>
+<button id="btn1" class="btn btn-success" OnClick="ClickedL()">Shrink Me!</button>	
+<label id="lbl1"></label>
+
+
+</body>
+</html>
