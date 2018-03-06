@@ -1,0 +1,37 @@
+<!doctype html> 
+<html lang="en">
+<head>
+<title></title>
+<script lang="javascript">
+	
+	function startGame() {
+		var arr = [];
+		var total = 0;
+				
+		var roll = rollDie();		
+		while(roll != 1) { //if the roll is not equal to 1, roll again
+			arr.push(roll);  //pushes the roll to the array
+			total += roll;  //add the roll total
+			roll = rollDie();  
+		}
+		
+		var lblCtrl = document.getElementById("results");
+		lblCtrl.textContent = arr.join(",") + " Total = " + total;
+		arr = [];
+
+	}
+	
+	function rollDie() {
+		return Math.floor(Math.random() *6) +1;
+	}
+	
+</script>
+</head>
+<body>
+
+<button id="roll" OnClick="startGame()">Play Pig Dice</button>
+<label id="results"></label>
+
+
+</body>
+</html>

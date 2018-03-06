@@ -1,0 +1,38 @@
+<!doctype html> 
+<html lang="en">
+<head>
+<title>Play Pig Dice Game</title>
+<script lang="javascript">
+	//no Main method would be needed since everything will be loaded when the page loads, also, in the body, no OnLoad=Main() needs to be stated.
+
+	function PlayGame() {
+		var arr = [];
+		var total = 0;
+		//roll the die
+		var roll = rollDie();
+		//check the number
+		while(roll != 1) { 
+			arr.push(roll);  //if it is a 1, end game after print of all numbers and total
+			total += roll;  //if it is not 1, add to total (else)
+			roll = rollDie();  //if game is not over, roll again and repeat steps already stated
+		}
+		
+		var lblCtrl = document.getElementById("results");
+		lblCtrl.textContent = arr.join(",") + " :: " + total;
+		arr = [];
+
+	}
+	
+	function rollDie() {
+		return Math.floor(Math.random() *6) +1;
+	}
+	
+</script>
+</head>
+<body>
+
+<button id="roll" OnClick="PlayGame()">Play Pig Dice</button>
+<label id="results"></label>
+
+</body>
+</html>
